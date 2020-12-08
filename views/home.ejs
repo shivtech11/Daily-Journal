@@ -1,0 +1,15 @@
+<%- include("partials/header") -%>
+<h1>HOME</h1>
+<p><%=startingContent %></p>
+
+<% postList.forEach(function(post){ %> 
+   
+    <h3><%=post.title %></h3>
+	<p> 
+		<%=post.content.substring(0,100); %>...
+		<a href="/post/<%=post._id %>">Read more </a>
+	</p>
+<%});%>
+
+<a href="/compose"><button class="btn btn-primary" >Add Post </button></a>
+<%- include("partials/footer") -%>
